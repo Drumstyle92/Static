@@ -1,3 +1,6 @@
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 /**
  * @author Drumstyle92
  * class regarding employee badges.
@@ -40,7 +43,8 @@ public class Badge {
      * @return The badge serial code return.
      * method that generates the badge code.
      */
-    private String generateBadgeIdCode(){
+    @Contract(pure = true)
+    private @NotNull String generateBadgeIdCode(){
         String string = "XYZ"+employee.name+employee.surname+"ZYX";
         return string.replaceAll("[\\s|\\u00A0]+", "");
     }
